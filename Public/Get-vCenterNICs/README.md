@@ -95,4 +95,4 @@ PS>Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Username fboisvert
 ## RELATED LINKS
 Get-vCenterNICs
 
-https://github.com/fboisvert/SynInternals/blob/master/Public/Get-vCenterNICs.md
+https://github.com/fboisvert/SynInternals/tree/master/Public/Get-vCenterNICs

@@ -47,7 +47,7 @@ function Get-vCenterNICs {
 
     .LINK
 
-    Get-vCenterNICs
+    https://github.com/fboisvert/SynInternals/tree/master/Public/Get-vCenterNICs
     #>
     
     [CmdletBinding()]
