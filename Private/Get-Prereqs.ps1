@@ -1,1 +1,0 @@
-#Script checks all prereqs for runnnins tools

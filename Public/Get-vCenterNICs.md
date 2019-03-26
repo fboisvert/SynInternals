@@ -13,7 +13,10 @@ Exporte la liste des VMs d'un vCenter ainsi que toutes les NICs associées.
 
 ## DESCRIPTION
 Exporte la liste des VMs d'un vCenter ainsi que toutes les NICs associées
+
 Requiert un usager ayant des droits en Read sur le vCenter au complet.
+
+Appendre "| Format-Table" pour obtenir les résultats dans une belle liste exportable.
 
 
 ## PARAMETERS
@@ -49,7 +52,7 @@ Requiert un usager ayant des droits en Read sur le vCenter au complet.
     -Password <SecureString>
         Passe le mot de passe du compte en plain-text.
         Requiert un object de type SecureString. Utiliser la syntaxe suivante pour l'obtenir:
-            "M0tDeP@sse" | Convertto-SecureString -AsPlainText -Force
+            "M0tDeP@sse" | ConvertTo-SecureString -AsPlainText -Force
         Attention! Cette méthode n'est pas sécuritaire et devrait être évitée à tout prix.
 
         Required?                    true
@@ -83,12 +86,7 @@ PS> Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Credential $Creds
 
 -------------------------- EXAMPLE 2 --------------------------
 
-PS>Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Username fboisvert -Password ("P@ssw0rd" | Convertto-SecureString -AsPlainText -Force)
-
-
-
-
-
+PS>Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Username fboisvert -Password ("P@ssw0rd" | ConvertTo-SecureString -AsPlainText -Force)
 
 
 ## RELATED LINKS
