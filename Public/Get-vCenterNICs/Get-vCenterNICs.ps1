@@ -102,6 +102,6 @@ function Get-vCenterNICs {
     }
     
     end {
-        Disconnect-VIServer -Confirm $false
+        Disconnect-VIServer -Confirm:$false
     }
 }
