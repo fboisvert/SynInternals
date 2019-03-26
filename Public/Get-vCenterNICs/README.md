@@ -32,6 +32,7 @@ Appendre "| Format-Table" pour obtenir les résultats dans une belle liste expor
     -Credential <PSCredential>
         Fournis les informations de connexion au vCenter de manière sécuritaire.
         Utiliser la commande Get-Credential pour entrer les informations de connexion
+        Ne pas combiner avec les paramètres "Username et Password"
 
         Required?                    true
         Position?                    named
@@ -42,6 +43,7 @@ Appendre "| Format-Table" pour obtenir les résultats dans une belle liste expor
     -Username <String>
         Passe le nom d'usager du compte en plain-text.
         Utiliser avec le paramêtre "Password"
+        Ne pas combiner avec le paramètre "Credential"
 
         Required?                    true
         Position?                    named
@@ -54,6 +56,7 @@ Appendre "| Format-Table" pour obtenir les résultats dans une belle liste expor
         Requiert un object de type SecureString. Utiliser la syntaxe suivante pour l'obtenir:
             "M0tDeP@sse" | ConvertTo-SecureString -AsPlainText -Force
         Attention! Cette méthode n'est pas sécuritaire et devrait être évitée à tout prix.
+        Ne pas combiner avec le paramètre "Credential"
 
         Required?                    true
         Position?                    named
