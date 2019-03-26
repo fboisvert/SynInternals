@@ -1,54 +1,22 @@
-
-### NAME
+## NAME
 Get-vCenterNICs
 
-### SYNOPSIS
+## SYNOPSIS
 Exporte la liste des VMs d'un vCenter ainsi que toutes les NICs associées.
 
 
-### SYNTAX
+## SYNTAX
 `Get-vCenterNICs -vCenterHostName <String> -Credential <PSCredential> [<CommonParameters>]`
 
 `Get-vCenterNICs -vCenterHostName <String> -Username <String> -Password <SecureString> [<CommonParameters>]`
 
 
-### DESCRIPTION
+## DESCRIPTION
 Exporte la liste des VMs d'un vCenter ainsi que toutes les NICs associées
 Requiert un usager ayant des droits en Read sur le vCenter au complet.
 
 
-### RELATED LINKS
-Get-vCenterNICs
-
-
-REMARKS
-    To see the examples, type: "get-help Get-vCenterNICs -examples".
-    For more information, type: "get-help Get-vCenterNICs -detailed".
-    For technical information, type: "get-help Get-vCenterNICs -full".
-    For online help, type: "get-help Get-vCenterNICs -online"
-
-
-PS C:\Users\fboisvert\OneDrive - Synovatec Inc\source\repos\SynInternals> Get-Help get-vcenternics -full
-
-NAME
-    Get-vCenterNICs
-
-SYNOPSIS
-    Exporte la liste des VMs d'un vCenter ainsi que toutes les NICs associées.
-
-
-SYNTAX
-    Get-vCenterNICs -vCenterHostName <String> -Credential <PSCredential> [<CommonParameters>]
-
-    Get-vCenterNICs -vCenterHostName <String> -Username <String> -Password <SecureString> [<CommonParameters>]
-
-
-DESCRIPTION
-    Exporte la liste des VMs d'un vCenter ainsi que toutes les NICs associées
-    Requiert un usager ayant des droits en Read sur le vCenter au complet.
-
-
-PARAMETERS
+## PARAMETERS
     -vCenterHostName <String>
         Spécifie le nom du vCenter. Une addresse IP n'est pas suffisante
 
@@ -96,32 +64,34 @@ PARAMETERS
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
         about_CommonParameters (https:/go.microsoft.com/fwlink/?LinkID=113216).
 
-INPUTS
-    Aucun Input. La commande n'accepte pas de paramêtre pas la Pipeline.
+## INPUTS
+Aucun Input. La commande n'accepte pas de paramêtre pas la Pipeline.
 
 
-OUTPUTS
-    L'objet retourné est de type PSCustomObject et définit la liste des VMs ainsi que toutes les NICs associées à chaque d'elles.
+## OUTPUTS
+L'objet retourné est de type PSCustomObject et définit la liste des VMs ainsi que toutes les NICs associées à chaque d'elles.
 
+## Examples
+-------------------------- EXAMPLE 1 --------------------------
 
-    -------------------------- EXAMPLE 1 --------------------------
+PS>$Creds = Get-Credential
 
-    PS>$Creds = Get-Credential
-
-    PS> Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Credential $Creds
-
-
-
-
-    -------------------------- EXAMPLE 2 --------------------------
-
-    PS>Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Username fboisvert -Password ("P@ssw0rd" | Convertto-SecureString -AsPlainText -Force)
+PS> Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Credential $Creds
 
 
 
 
+-------------------------- EXAMPLE 2 --------------------------
+
+PS>Get-vCenterNICs -vCenterHostname vcenter.ad.synovatec.com -Username fboisvert -Password ("P@ssw0rd" | Convertto-SecureString -AsPlainText -Force)
 
 
 
-RELATED LINKS
-    Get-vCenterNICs
+
+
+
+
+## RELATED LINKS
+Get-vCenterNICs
+
+https://github.com/fboisvert/SynInternals/blob/master/Public/Get-vCenterNICs.md
