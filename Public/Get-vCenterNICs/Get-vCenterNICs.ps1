@@ -46,7 +46,6 @@ function Get-vCenterNICs {
 
 
     .LINK
-
     https://github.com/fboisvert/SynInternals/tree/master/Public/Get-vCenterNICs
     #>
     
@@ -59,18 +58,18 @@ function Get-vCenterNICs {
     )
     
     begin {
-        #Check les dépendances
-#        if ((Get-Module -Name vmware.powercli -ListAvailable).version.major -lt 11) {
-#            Throw "Cette commande requiert le module VMware.PowerCLI à la version 11. Le module peut être téléchargé à partir de `"https://www.powershellgallery.com/packages/VMware.PowerCLI`".`nVous pouvez aussi utiliser la commande `"Install-Module -Name VMWare.PowerCLI -Scope CurrentUser`" pour en faire le téléchargement et l'installation."
-#        }
-#        else{
-#            Import-Module VMware.PowerCLI | Out-Null
-#        }
+       #Check les dépendances
+        if ((Get-Module -Name vmware.powercli -ListAvailable).version.major -lt 11) {
+            Throw "Cette commande requiert le module VMware.PowerCLI à la version 11. Le module peut être téléchargé à partir de `"https://www.powershellgallery.com/packages/VMware.PowerCLI`".`nVous pouvez aussi utiliser la commande `"Install-Module -Name VMWare.PowerCLI -Scope CurrentUser`" pour en faire le téléchargement et l'installation."
+        }
+        else{
+            Import-Module VMware.PowerCLI | Out-Null
+       }
         
         #Configure l'environnement PowerCli pour éviter les erreurs
-#        if(Get-PowerCLIConfiguration){
-#            Set-PowerCLIConfiguration -InvalidCertificateAction Ignore | Out-Null
-#        }
+        if((Get-PowerCLIConfiguration -Scope User).InvalidCertificateAction -ne "Ignore") {
+            Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Scope User -ParticipateInCeip $False -Confirm:$False| Out-Null
+        }
 
         #Crée l'objet Credentials si les paramêtres Username/Password sont utilisés
         if($PSCmdlet.ParameterSetName -eq "Username"){
